@@ -1,16 +1,50 @@
-# React + Vite
+# Portfolio - Fathan Mulyasa H. (tan)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Lighthouse Performance Score 99]
+<img width="1366" height="768" alt="Screenshot from 2026-05-06 10-47-26" src="https://github.com/user-attachments/assets/d2145ce9-3476-4433-b67a-1b589b5c1152" />
 
-Currently, two official plugins are available:
+## Overview
+A high-performance, interactive developer portfolio built with a focus on advanced scroll-driven animations and extreme rendering optimization. The architecture has been rigorously audited to achieve a near-perfect Lighthouse score without sacrificing complex visual interactions and the cyberpunk-inspired terminal aesthetic.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Portfolio Hero Preview]
+<img width="1366" height="768" alt="Screenshot from 2026-05-06 11-24-20" src="https://github.com/user-attachments/assets/b8b82b76-ad42-42bf-8e51-397b28016f40" />
 
-## React Compiler
+## Core Architecture
+* **Framework:** React + Vite
+* **Styling:** Tailwind CSS (Custom Variables for strict theme integrity)
+* **Animation Engine:** GSAP (GreenSock) + `@gsap/react` & ScrollTrigger
+* **Graphics:** Native HTML5 `<canvas>`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Engineering Highlights
+1. **Canvas-Driven Rendering:** Replaced 150+ heavy DOM nodes with a single `<canvas>` element for the `SpaceParticles` background system. This eliminates main-thread blocking, prevents layout thrashing, and maintains a stable 60fps during scroll.
+2. **Advanced GSAP Integrations:**
+   * **Velocity Scrubbing:** An infinite `TechMarquee` that dynamically accelerates based on the user's scroll velocity (`self.getVelocity()`).
+   * **Parallax Depth:** Asynchronous vertical scrolling on terminal HUD ornaments to create a 3D depth illusion.
+   * **Viewport Intersections:** Bento box laser scans and staggered text reveals tied directly to `ScrollTrigger` batching.
+3. **Aggressive Code Splitting:** Implementation of `React.lazy()` and `<Suspense>` to defer the loading of off-screen sections (Projects, Contact), drastically reducing the initial JavaScript payload.
+4. **Fluid Responsiveness:** Fully adaptable layout from mobile viewports up to ultra-wide desktop monitors, featuring dynamic scaling for grid systems and typography.
 
-## Expanding the ESLint configuration
+## Tech Arsenal
+* **Core:** React, Next.js, TypeScript, Tailwind CSS, Node.js, Laravel
+* **Visuals:** GSAP, HTML5 Canvas
+* **Ecosystem:** Docker, AWS, Git, Postman
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Local Deployment
+
+### Prerequisites
+Ensure Node.js (v18.x or higher) is installed on your local environment.
+
+### Installation & Execution
+```bash
+# Clone the repository
+git clone [https://github.com/username-lu/nama-repo-lu.git](https://github.com/username-lu/nama-repo-lu.git)
+
+# Navigate to the project directory
+cd nama-repo-lu
+
+# Install dependencies
+npm install
+
+# Initialize the development server
+npm run dev
+```
