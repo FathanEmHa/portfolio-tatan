@@ -37,10 +37,10 @@ Ensure Node.js (v18.x or higher) is installed on your local environment.
 ### Installation & Execution
 ```bash
 # Clone the repository
-git clone [https://github.com/username-lu/nama-repo-lu.git](https://github.com/username-lu/nama-repo-lu.git)
+git clone [https://github.com/FathanEmHa/portfolio-tatan.git](https://github.com/FathanEmHa/portfolio-tatan.git)
 
 # Navigate to the project directory
-cd nama-repo-lu
+cd portfolio-tatan
 
 # Install dependencies
 npm install
