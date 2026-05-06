@@ -1,0 +1,403 @@
+/* =========================================================
+   PORTFOLIO — index.css
+   Design System: Neo-Tokyo Minimalist / Cyberpunk
+   ========================================================= */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES (Theming)
+   --------------------------------------------------------- */
+
+/* DARK MODE — Default */
+:root,
+.dark {
+  --bg-primary:    #111111;
+  --bg-secondary:  #161616;
+  --bg-card:       #1A1A1A;
+  --bg-card-hover: #222222;
+
+  --text-primary:  #E5E7EB;
+  --text-secondary:#B0B7C3;
+  --text-muted:    #6B7280;
+
+  --accent:        #00E5FF;
+  --accent-dim:    rgba(0, 229, 255, 0.12);
+  --accent-glow:   rgba(0, 229, 255, 0.4);
+
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-accent: rgba(0, 229, 255, 0.3);
+
+  --sidebar-width: 72px;
+  --scrollbar-track: #161616;
+  --scrollbar-thumb: #2a2a2a;
+  --scrollbar-hover: #3a3a3a;
+}
+
+/* LIGHT MODE */
+.light {
+  --bg-primary:    #F8F9FA;
+  --bg-secondary:  #F0F2F5;
+  --bg-card:       #FFFFFF;
+  --bg-card-hover: #F5F5F5;
+
+  --text-primary:  #1A1A1A;
+  --text-secondary:#4B5563;
+  --text-muted:    #9CA3AF;
+
+  --accent:        #005B99;
+  --accent-dim:    rgba(0, 91, 153, 0.10);
+  --accent-glow:   rgba(0, 91, 153, 0.35);
+
+  --border-subtle: rgba(0, 0, 0, 0.07);
+  --border-accent: rgba(0, 91, 153, 0.3);
+
+  --scrollbar-track: #F0F2F5;
+  --scrollbar-thumb: #D1D5DB;
+  --scrollbar-hover: #9CA3AF;
+}
+
+/* ---------------------------------------------------------
+   2. BASE RESET & GLOBAL STYLES
+   --------------------------------------------------------- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-hover); }
+
+/* ---------------------------------------------------------
+   3. SELECTION
+   --------------------------------------------------------- */
+
+::selection {
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+/* ---------------------------------------------------------
+   4. LAYOUT — Fixed Shell
+   --------------------------------------------------------- */
+
+#app-shell {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: var(--sidebar-width);
+  z-index: 50;
+  border-right: 1px solid var(--border-subtle);
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  transition: background-color 0.3s ease;
+  /* Allow rotated nav text to overflow visually without scroll */
+  overflow: visible;
+}
+
+#main-content {
+  margin-left: var(--sidebar-width);
+  width: calc(100vw - var(--sidebar-width));
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ---------------------------------------------------------
+   5. COMPONENT UTILITIES
+   --------------------------------------------------------- */
+
+@layer components {
+  /* Accent glow text */
+  .text-glow {
+    text-shadow: 0 0 20px var(--accent-glow), 0 0 40px var(--accent-glow);
+  }
+
+  /* Glassmorphism card */
+  .glass-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .glass-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px var(--accent-glow);
+  }
+
+  /* Terminal window */
+  .terminal-window {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: 'JetBrains Mono', monospace;
+    transition: background 0.3s ease;
+  }
+
+  .terminal-titlebar {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Accent button */
+  .btn-accent {
+    background: var(--accent);
+    color: var(--bg-primary);
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .btn-accent:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px var(--accent-glow);
+  }
+
+  /* Outline button */
+  .btn-outline {
+    background: transparent;
+    color: var(--accent);
+    padding: 11px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    border: 1px solid var(--border-accent);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .btn-outline:hover {
+    background: var(--accent-dim);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px var(--accent-glow);
+  }
+
+  /* Section heading */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  /* Tag pill */
+  .tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border: 1px solid var(--border-accent);
+    letter-spacing: 0.03em;
+  }
+
+  /* Noise overlay */
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.02;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+}
+
+/* ---------------------------------------------------------
+   6. SECTION BASE
+   --------------------------------------------------------- */
+
+.portfolio-section {
+  padding: 100px 64px 100px 80px;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .portfolio-section {
+    padding: 80px 40px 80px 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 56px;
+  }
+  .portfolio-section {
+    padding: 60px 20px 60px 28px;
+  }
+}
+
+/* ---------------------------------------------------------
+   7. SCAN-LINE ANIMATION (subtle cyberpunk touch)
+   --------------------------------------------------------- */
+
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.scan-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    transparent,
+    var(--accent-glow),
+    transparent
+  );
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+  z-index: 998;
+  opacity: 0.04;
+}
+
+/* ---------------------------------------------------------
+   8. CURSOR BLINK
+   --------------------------------------------------------- */
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--accent);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+/* ---------------------------------------------------------
+   9. KATAKANA WATERMARK — Hero-scoped, inline-styled in component
+   --------------------------------------------------------- */
+
+/* ---------------------------------------------------------
+   10. NAV LINK STYLES
+   --------------------------------------------------------- */
+
+.nav-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------
+   11. GRID BACKGROUND EFFECT
+   --------------------------------------------------------- */
+
+.grid-bg {
+  background-image:
+    linear-gradient(var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
