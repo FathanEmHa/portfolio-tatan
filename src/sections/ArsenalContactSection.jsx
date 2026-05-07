@@ -3,8 +3,10 @@ import { m as motion } from 'framer-motion';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Terminal, Send, Globe, Activity } from 'lucide-react'; // Import icon baru
+import { Terminal, Send, Globe, Activity } from 'lucide-react'; 
 import AnimatedSection from '../components/AnimatedSection';
+// --- Tambahin Import Ini ---
+import { SITE_META } from '../constants/data'; // Sesuaikan path ini kalau beda letaknya
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -78,6 +80,13 @@ export default function ArsenalContactSection() {
     });
   }, { scope: containerRef });
 
+  // Array helper buat mapping Network Nodes dari SITE_META
+  const networks = [
+    { name: 'GitHub', url: SITE_META.github },
+    { name: 'LinkedIn', url: SITE_META.linkedin },
+    { name: 'Instagram', url: SITE_META.instagram }
+  ];
+
   return (
     <AnimatedSection id="contact" variant="rubberBand" className="w-full max-w-7xl mx-auto py-20 px-6 lg:px-20">
       <div ref={containerRef} className="flex flex-col gap-12">
@@ -97,7 +106,7 @@ export default function ArsenalContactSection() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 w-full max-w-5xl">
             
-            {/* Left Column: Network & Status (PENGGANTI TECH ARSENAL) */}
+            {/* Left Column: Network & Status */}
             <div className="flex flex-col gap-10">
               
               {/* GSAP CHILD 1: Network Nodes */}
@@ -107,16 +116,22 @@ export default function ArsenalContactSection() {
                   Network Nodes
                 </h3>
                 <div className="flex flex-wrap gap-3">
-                  {/* Tinggal masukin link sosmed lu ntar di href */}
-                  {['GitHub', 'LinkedIn', 'Instagram'].map((net, i) => (
-                    <a key={i} href="#" className="px-4 py-2 text-sm font-mono text-[var(--text-primary)] bg-[var(--border-subtle)]/10 border border-[var(--border-subtle)] rounded-lg hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all duration-300 shadow-sm hover:shadow-[0_0_10px_var(--accent)]">
-                      {net}
+                  {/* --- Mapping data langsung dari networks helper --- */}
+                  {networks.map((net, i) => (
+                    <a 
+                      key={i} 
+                      href={net.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="px-4 py-2 text-sm font-mono text-[var(--text-primary)] bg-[var(--border-subtle)]/10 border border-[var(--border-subtle)] rounded-lg hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all duration-300 shadow-sm hover:shadow-[0_0_10px_var(--accent)]"
+                    >
+                      {net.name}
                     </a>
                   ))}
                 </div>
               </div>
 
-              {/* GSAP CHILD 2: Active Directives (Status Sekarang) */}
+              {/* GSAP CHILD 2: Active Directives */}
               <div className="gsap-child">
                 <h3 className="text-xl font-bold text-[var(--text-primary)] mb-6 flex items-center gap-3">
                   <Activity size={24} className="text-[var(--accent)]" />
@@ -139,7 +154,7 @@ export default function ArsenalContactSection() {
               </div>
             </div>
 
-            {/* Right Column: Terminal Contact - GSAP CHILD 3 */}
+            {/* Right Column: Terminal Contact */}
             <div className="gsap-child flex flex-col justify-center">
               <div className="rounded-xl overflow-hidden border border-[var(--border-subtle)] bg-[var(--bg-card)]/90 backdrop-blur-md shadow-2xl relative">
                 
@@ -167,7 +182,7 @@ export default function ArsenalContactSection() {
                   </div>
                   
                   <a 
-                    href="mailto:fathanmh26@gmail.com" 
+                    href={`mailto:${SITE_META.email}`} // --- Pake email dari config juga ---
                     className="inline-flex items-center gap-3 px-6 py-3 font-mono text-[var(--bg-primary)] bg-[var(--accent)] hover:bg-[var(--accent)]/90 hover:shadow-[0_0_20px_var(--accent)] transition-all duration-300 rounded-md font-bold uppercase tracking-wider text-sm"
                   >
                     <Send size={18} />

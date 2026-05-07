@@ -1,0 +1,14 @@
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: react-portfolio
+    restart: unless-stopped
+    # Nggak perlu nulis ports: "..." karena udah di-handle sama Nginx Proxy Manager
+    networks:
+      - proxy-tier
+
+networks:
+  proxy-tier:
+    external: true

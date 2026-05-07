@@ -23,65 +23,6 @@ export const NAV_LINKS = [
 ];
 
 // ---------------------------------------------------------
-//  Projects
-// ---------------------------------------------------------
-
-export const PROJECTS = [
-  {
-    id: 'sipa',
-    name: 'SIPA',
-    fullName: 'Sistem Informasi Peminjaman Alat',
-    description:
-      'A comprehensive asset borrowing management system built for institutional use. Handles inventory tracking, approval workflows, penalty calculations, and multi-role dashboards.',
-    tags: ['Laravel', 'Livewire 3', 'Tailwind CSS', 'MySQL'],
-    github: 'https://github.com/fathanmulyasa/sipa',
-    demo: null,
-    featured: true,
-    year: '2025',
-    status: 'Production',
-  },
-  {
-    id: 'nodefarm',
-    name: 'NodeFarm / TaskGrid',
-    fullName: 'NodeFarm — TaskGrid Productivity Suite',
-    description:
-      'A modular task management and project planning suite inspired by Notion and Linear. Features real-time collaboration, kanban boards, and AI-assisted task prioritization.',
-    tags: ['React', 'Node.js', 'Framer Motion', 'Tailwind CSS'],
-    github: 'https://github.com/fathanmulyasa/taskgrid',
-    demo: null,
-    featured: true,
-    year: '2025',
-    status: 'In Progress',
-  },
-  {
-    id: 'flutter-mobile',
-    name: 'SIPA Mobile',
-    fullName: 'SIPA — Mobile Companion App',
-    description:
-      'Flutter-based mobile companion for the SIPA system. Allows borrowers to submit requests, track approvals, and receive push notifications on the go.',
-    tags: ['Flutter', 'Dart', 'REST API', 'Firebase'],
-    github: null,
-    demo: null,
-    featured: false,
-    year: '2025',
-    status: 'In Development',
-  },
-  {
-    id: 'dashboard-admin',
-    name: 'AdminKit Pro',
-    fullName: 'AdminKit Pro — Multi-Tenant Dashboard',
-    description:
-      'A customizable multi-tenant admin dashboard template with dark/light theming, real-time charts, and modular widget system.',
-    tags: ['React', 'Recharts', 'Tailwind CSS', 'Vite'],
-    github: 'https://github.com/fathanmulyasa/adminkit-pro',
-    demo: null,
-    featured: false,
-    year: '2024',
-    status: 'Completed',
-  },
-];
-
-// ---------------------------------------------------------
 //  Tech Stack / Arsenal
 // ---------------------------------------------------------
 
