@@ -44,12 +44,20 @@ export const TECH_ARSENAL = {
     "Framer Motion",
     "Laravel",
     "Livewire 3",
-    "Flutter"
+    "Flutter",
+    "Nginx",
+    "Docker",
+    "Ubuntu",
+    "MySQL",
+    "NPM",
+    
+
   ],
   aiWorkflow: [
     "Cursor",
     "Claude",
     "Gemini",
-    "OpenClaw"
+    "OpenClaw",
+    "Antigravity"
   ]
 };
