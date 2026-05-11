@@ -34,6 +34,15 @@ export const PROJECTS = [
     techStack: ['Laravel', 'JWT / OTP', 'Vanilla JS', 'REST API'],
     githubUrl: 'https://github.com/melinnp/reimburse_app', // Isi URL repo kalau ada
     liveUrl: null,
+  },
+  {
+    id: 'nodefarm-beta',
+    title: 'NodeFarm (Beta): AI-Powered Productivity',
+    description:
+      'The foundational beta release of a next-generation task management suite. Architected on Next.js with a clear roadmap to deeply integrate the Vercel AI SDK for generative UI workflows. Backed by PostgreSQL and styled with the bleeding-edge Tailwind CSS v4.',
+    techStack: ['Next.js', 'Vercel AI SDK', 'PostgreSQL', 'Tailwind v4'],
+    githubUrl: 'https://github.com/FathanEmHa/nodefarm-beta', // Jangan lupa isi link repo NodeFarm lu nanti
+    liveUrl: null,
   }
 ];
 
@@ -49,9 +58,7 @@ export const TECH_ARSENAL = {
     "Docker",
     "Ubuntu",
     "MySQL",
-    "NPM",
-    
-
+    "NPM"
   ],
   aiWorkflow: [
     "Cursor",
