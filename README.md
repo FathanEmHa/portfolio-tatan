@@ -31,7 +31,7 @@ A high-performance, interactive developer portfolio built with a focus on advanc
 ## Tech Arsenal
 * **Core:** React, Next.js, TypeScript, Tailwind CSS, Node.js, Laravel
 * **Visuals:** GSAP, HTML5 Canvas
-* **Ecosystem:** Docker, AWS, Git, Postman
+* **Ecosystem:** Docker, Git
 
 ## Local Deployment
 
