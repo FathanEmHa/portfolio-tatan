@@ -1,13 +1,17 @@
 # Portfolio - Fathan Mulyasa H. (tan)
 
+**🚀 Live Demo:** [portfolio-tatan.vercel.app](https://portfolio-tatan.vercel.app/)
+
 ![Lighthouse Performance Score 99]
 <img width="1366" height="768" alt="Screenshot from 2026-05-06 10-47-26" src="https://github.com/user-attachments/assets/d2145ce9-3476-4433-b67a-1b589b5c1152" />
 
 ## Overview
 A high-performance, interactive developer portfolio built with a focus on advanced scroll-driven animations and extreme rendering optimization. The architecture has been rigorously audited to achieve a near-perfect Lighthouse score without sacrificing complex visual interactions and the cyberpunk-inspired terminal aesthetic.
 
-![Portfolio Hero Preview]
-<img width="1366" height="768" alt="Screenshot from 2026-05-06 11-24-20" src="https://github.com/user-attachments/assets/b8b82b76-ad42-42bf-8e51-397b28016f40" />
+*(Click the image below to visit the live site)*
+<a href="https://portfolio-tatan.vercel.app/" target="_blank">
+  <img width="1366" height="768" alt="Portfolio Hero Preview" src="https://github.com/user-attachments/assets/b8b82b76-ad42-42bf-8e51-397b28016f40" />
+</a>
 
 ## Core Architecture
 * **Framework:** React + Vite
@@ -47,4 +51,3 @@ npm install
 
 # Initialize the development server
 npm run dev
-```
