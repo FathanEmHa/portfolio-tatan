@@ -1,6 +1,6 @@
 services:
   portfolio:
-    image: ghcr.io/FathanEmHa/portfolio-tatan:latest
+    image: ghcr.io/fathanemha/portfolio-tatan:latest
     container_name: portfolio-tatan
     restart: unless-stopped
     healthcheck:
