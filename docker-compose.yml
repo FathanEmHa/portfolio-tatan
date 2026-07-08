@@ -1,11 +1,14 @@
 services:
   portfolio:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: react-portfolio
+    image: ghcr.io/FathanEmHa/portfolio-tatan:latest
+    container_name: portfolio-tatan
     restart: unless-stopped
-    # Nggak perlu nulis ports: "..." karena udah di-handle sama Nginx Proxy Manager
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
     networks:
       - proxy-tier
 
