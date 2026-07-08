@@ -6,7 +6,7 @@ export const PROJECTS = [
       'A comprehensive digital asset management and borrowing system built for institutional use. Features role-based access control, automated penalty calculations, and dynamic inventory tracking.',
     techStack: ['Laravel', 'Livewire', 'Tailwind CSS', 'MySQL', 'JWT / OTP'],
     githubUrl: 'https://github.com/FathanEmHa/peminjaman-beta',
-    liveUrl: null,
+    liveUrl: 'http://sipa.tansys.my.id',
   },
   {
     id: 'neo-japan-portfolio',
