@@ -51,6 +51,6 @@ export const PROJECTS = [
       '[STATUS: CONCEPT & WIREFRAME] An early-stage productivity platform currently focused on product research, wireframing, and feature validation. The project exists as a static prototype used to explore workflows, information architecture, and future AI-powered task management experiences before full-scale development begins.',
     techStack: ['Next.js', 'PostgreSQL', 'Tailwind CSS v4', 'Vercel AI SDK (Planned)'],
     githubUrl: 'https://github.com/FathanEmHa/nodefarm-beta',
-    liveUrl: null,
+    liveUrl: 'http://nodefarm.tansys.my.id',
   }
 ];
