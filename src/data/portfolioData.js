@@ -15,7 +15,7 @@ export const PROJECTS = [
       'A high-performance, cyberpunk-inspired personal portfolio. Engineered with advanced GSAP scroll-driven animations, parallax HUDs, and a custom HTML5 canvas particle engine achieving a 99+ Lighthouse performance score.',
     techStack: ['React', 'GSAP', 'Tailwind CSS', 'Framer Motion'],
     githubUrl: 'https://github.com/FathanEmHa/portfolio-tatan',
-    liveUrl: 'https://portfolio-tatan.vercel.app/',
+    liveUrl: 'http://tansys.my.id',
   },
   {
     id: 'reimburse-system',
