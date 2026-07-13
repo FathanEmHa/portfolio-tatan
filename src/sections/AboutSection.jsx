@@ -26,7 +26,7 @@ const lines = [
   ],
   [
     { text: "  status: ", className: "text-emerald-700 dark:text-emerald-400" },
-    { text: '"Vocational High School (SMK) - Graduating May 2026"', className: "text-amber-600 dark:text-amber-300" },
+    { text: '"Fresh Graduate (SMK RPL, May 2026)"', className: "text-amber-600 dark:text-amber-300" },
     { text: ",", className: "text-[var(--text-primary)]" }
   ],
   [

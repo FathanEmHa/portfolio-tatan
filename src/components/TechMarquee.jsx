@@ -5,8 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ROW1_TECH = ["React", "Laravel", "TypeScript", "GSAP", "Framer Motion", "Tailwind CSS", "Flutter", "Livewire", "MongoDB"];
-const ROW2_TECH = ["Claude", "Gemini", "OpenClaw", "Docker", "Cursor", "Antigravity", "Figma", "Postman", "Linux"];
+const ROW1_TECH = ["React", "Laravel", "TypeScript", "GSAP", "Framer Motion", "Tailwind CSS", "Flutter", "Livewire", "MongoDB", "Prisma"];
+const ROW2_TECH = ["Claude", "Gemini", "OpenClaw", "Docker", "Cursor", "Antigravity", "Figma", "Postman", "Linux", "Next.js", "PostgreSQL"];
 
 const TechItem = ({ children }) => (
   <div className="flex items-center justify-center px-6 py-3 border border-[var(--border-subtle)] bg-[var(--bg-card)]/50 backdrop-blur-sm rounded-lg whitespace-nowrap text-[var(--text-primary)] font-mono text-sm shadow-sm hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors duration-300">

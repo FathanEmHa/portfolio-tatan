@@ -137,22 +137,24 @@ export default function ArsenalContactSection() {
                   <Activity size={24} className="text-[var(--accent)]" />
                   Active Directives
                 </h3>
+
                 <div className="flex flex-col gap-4 font-mono text-sm text-[var(--text-primary)]/80">
                   <div className="flex items-start gap-3 border-l-2 border-[var(--accent)] pl-3">
                     <span className="text-[var(--accent)] mt-0.5">&gt;&gt;</span>
-                    <p>Executing deployment protocols for SIPA project via VPS and tan.my.id domain.</p>
+                    <p>Developing Sports Venue Management System (SVMS), a SaaS platform for sports facility operations and bookings.</p>
                   </div>
+
                   <div className="flex items-start gap-3 border-l-2 border-[var(--accent)] pl-3">
                     <span className="text-[var(--accent)] mt-0.5">&gt;&gt;</span>
-                    <p>Optimizing development speed utilizing AI agents (Cursor, Claude, Gemini).</p>
+                    <p>Accelerating development workflows with AI-powered engineering tools (Cursor, Claude, Gemini).</p>
                   </div>
+
                   <div className="flex items-start gap-3 border-l-2 border-[var(--accent)] pl-3">
                     <span className="text-[var(--accent)] mt-0.5">&gt;&gt;</span>
-                    <p>Transitioning architecture skills into Product Management frameworks.</p>
+                    <p>Expanding from software engineering into product strategy, SaaS business, and startup execution.</p>
                   </div>
                 </div>
               </div>
-            </div>
 
             {/* Right Column: Terminal Contact */}
             <div className="gsap-child flex flex-col justify-center">
