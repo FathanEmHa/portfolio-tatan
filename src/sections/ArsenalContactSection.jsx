@@ -155,6 +155,7 @@ export default function ArsenalContactSection() {
                   </div>
                 </div>
               </div>
+            </div>
 
             {/* Right Column: Terminal Contact */}
             <div className="gsap-child flex flex-col justify-center">
